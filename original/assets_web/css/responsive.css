@@ -1,0 +1,921 @@
+@media (max-width:1300px) {
+    .menu-header {
+        width: auto;
+    }
+    .round-btn {
+        margin-left: 0px;
+    }
+    .nav-main .navbar-nav li a {
+        padding: 10px 10px;
+    }
+    .header_top_item ul.contact li:last-child {
+        display: none;
+    }
+    .home-banner-text {
+        top: 0px;
+        left: 3%;
+    }
+}
+
+@media (max-width:1199px) {
+    .round-btn {
+        margin-left: 0px;
+    }
+    .img-data p {
+        height: 220px;
+    }
+    .nav-main a {
+        padding: 10px 10px !important;
+    }
+    .slider-content {
+        width: 857px;
+    }
+    .feedback-item .carousel-caption {
+        right: 0%;
+        left: 42%;
+    }
+    .feedback-indicators {
+        bottom: -126px;
+    }
+    .feedback-Controls .right {
+        top: 240px;
+        ;
+    }
+    .feedback-Controls .left {
+        top: 240px;
+        ;
+    }
+    .service-tab-menu {
+        margin-left: 10%;
+    }
+    .services-ifno-text p {
+        font-size: 13px;
+    }
+    .vision {
+        background-size: 50%;
+    }
+    .banner-text h3 {
+        font-size: 23px;
+    }
+    .banner-text h4 {
+        font-size: 27px;
+        padding-top: 0px;
+    }
+    .banner-text span {
+        font-size: 17px;
+    }
+    .banner-text h4 {
+        font-size: 18px;
+    }
+    .contact-details {
+        width: 300px;
+    }
+    .contact-details .media {
+        padding-left: 20px;
+    }
+    .form-inner form {
+        padding-left: 110px;
+    }
+    .form-inner {
+        width: 600px;
+    }
+    .root-main1::before {
+        height: 73px;
+        top: -32px;
+    }
+    .root-main2::before {
+        height: 73px;
+        top: -32px;
+    }
+    .root-main3::before {
+        height: 73px;
+        top: -32px;
+    }
+    .root-main4::before {
+        height: 73px;
+        top: -32px;
+    }
+    .round-btn {
+        width: 112px;
+    }
+    .btn-img {
+        display: none;
+    }
+    .slider-content-2 p {
+        font-size: 19px;
+    }
+    .slider-content-4 ul li {
+        width: 183px;
+    }
+}
+
+@media (max-width:1024px) {
+    .home-banner-text h3 {
+        font-size: 26px;
+    }
+    .home-banner-text p {
+        font-size: 16px !important;
+    }
+    .appointment-btn {
+        display: none !important;
+    }
+    .nav-main a {
+        padding: 10px 7px !important;
+    }
+    .slider-content {
+        width: 570px;
+    }
+    .root1 p {
+        padding-top: 40%;
+    }
+    .feedback-item .carousel-caption {
+        right: 0%;
+        left: 50%;
+    }
+    .feedback-Controls .right {
+        right: 33%;
+    }
+    .feedback-Controls .left {
+        left: 33%;
+    }
+    .about-banner-text h1 {
+        font-size: 26px;
+    }
+    .header_top_item ul.contact a {
+        font-size: 13px;
+    }
+    .slider-form {
+        display: none;
+    }
+    .slider-content-2 ul {
+        float: right;
+        margin-top: 48px;
+    }
+    .slider-content-4 ul {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .round-shape4::before {
+        left: 11.10%;
+        top: 0px;
+    }
+    .round-shape3::before {
+        top: 0px;
+        right: 12%;
+    }
+    .down-arrow {
+        left: 47%;
+    }
+    .consult-box p {
+        font-size: 12px;
+    }
+    .service-tab-menu li {
+        margin-right: 8px;
+    }
+    .service-tab-menu {
+        margin-left: 0%;
+    }
+    .services-ifno-text h1 {
+        margin-top: 10px;
+    }
+    .vision {
+        background-image: none;
+        height: auto;
+    }
+    .doctor-info {
+        display: inline-block;
+        margin-top: 0px;
+    }
+    .about-title {
+        font-size: 50px;
+    }
+    .banner-text h3 {
+        font-size: 15px;
+    }
+    .banner-text h4 {
+        font-size: 25px;
+    }
+    .home-banner-text h3 {
+        font-size: 28px;
+    }
+    .home-banner-text p {
+        font-size: 12px;
+    }
+    .space-0 {
+        padding: 0px;
+    }
+    .form-inner {
+        margin-left: 17%;
+    }
+    .contact-details {
+        width: 260px;
+    }
+    .form-inner form {
+        padding-left: 165px;
+        padding-top: 15px;
+    }
+    .contact-details {
+        left: 20px;
+        top: 30px;
+    }
+    .img-data p {
+        height: 125px;
+    }
+    .why-important {
+        margin-top: 45px;
+    }
+    .root-main3::before {
+        height: 65px;
+        top: -10px;
+    }
+    .root1 p {
+        padding-top: 50%;
+    }
+    .service-banner {
+        margin-top: 52px;
+    }
+    .error-page-main .img-responsive {
+        padding-top: 22%;
+    }
+    .team-head {
+        padding-top: 10%;
+    }
+    .about-banner-text h1 {
+        font-size: 20px;
+    }
+    .slider-content-4 ul li img {
+        width: 47%;
+    }
+    .contact-paragraph li {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (max-width: 767px) {
+    .menu-bar .navbar-nav {
+        position: absolute;
+        z-index: 5;
+        right: 0px;
+        background: #fff;
+        width: 300px;
+        margin: 0;
+        height: 400px;
+        overflow: scroll;
+    }
+    .slider .home-banner-text {
+        top: 20px;
+        width: 85%;
+        left: 5%;
+    }
+    .slider .right {
+        right: 10px;
+    }
+    .slider .left {
+        left: 10px;
+    }
+    .slider .carousel-control {
+        width: 8%;
+    }
+    .home-banner-text h3 {
+        font-size: 36px;
+    }
+    .slider .carousel-control span {
+        padding-top: 1000%;
+        font-size: 32px;
+    }
+    .slider-content {
+        width: 600px;
+    }
+    /*    .slider-content ul li {
+            width: 280px;
+    }*/
+    .menu-bar {
+        height: 52px;
+    }
+    .nav-main .navbar-brand img {
+        width: 80%;
+    }
+    .nav-main a {
+        padding: 0px 7px !important;
+    }
+    .nav-main li:hover {
+        border-top: 1px solid #c945b0;
+    }
+    .nav-main li {
+        border-top: 1px solid #000;
+        padding-top: 0px;
+        padding-left: 15px;
+    }
+    .feedback-item .carousel-caption {
+        left: 32%;
+        bottom: 0px;
+    }
+    .feedback-Controls .right {
+        top: 242px;
+    }
+    .feedback-Controls .left {
+        top: 242px;
+    }
+    .contact-info-top a {
+        font-size: 18px;
+    }
+    .consult-box {
+        height: 195px;
+    }
+    .service-tab-menu li {
+        width: 142px;
+    }
+    .service-tab-menu a {
+        width: 142px;
+    }
+    .about-banner-text {
+        right: 2%;
+        width: 43%;
+    }
+    .about-banner-text h4 {
+        margin-left: 0px;
+    }
+    .about-banner-text h5 {
+        margin-left: 0px;
+    }
+    .form-inner {
+        margin-left: 0px;
+        width: 100%;
+    }
+    .contact-details {
+        position: static;
+        width: 100%;
+        height: 525;
+    }
+    .form-inner form {
+        padding-left: 23px;
+    }
+    .contact-details hr:nth-child(2) {
+        width: 80%;
+    }
+    .contact-details h3 {
+        padding-top: 15px;
+    }
+    .contact-hr {
+        width: 80%;
+    }
+    .contact-follow {
+        margin-top: 10px !important;
+    }
+    .contact-social {
+        padding-bottom: 15px;
+    }
+    .contact-details {
+        background-size: cover;
+        margin-bottom: 30px;
+    }
+    .team-head h3 {
+        font-size: 50px;
+    }
+    .team-head p {
+        margin-left: 79px;
+    }
+    .contact-subheadding {
+        font-size: 17px !important;
+    }
+    .sminar-data {
+        height: auto;
+    }
+    .img-data p {
+        height: auto;
+        text-align: center;
+    }
+    .root1 p {
+        font-size: 14px;
+    }
+    .map-box iframe {
+        max-height: 250px;
+    }
+    .banner-text {
+        left: 3%;
+        width: 58%;
+    }
+    .banner-text h4 {
+        font-size: 44px;
+        line-height: 56px;
+    }
+    .banner-text span {
+        font-size: 26px;
+    }
+    .banner-text h3 {
+        font-size: 25px;
+    }
+    .consult-box {
+        border-bottom: 1px solid #a2c4c3;
+    }
+    .vision-box2 ul {
+        margin-left: 10px;
+    }
+    .about-text {
+        margin-left: 10px;
+    }
+    .root-round-shape1::before {
+        left: 43%;
+    }
+    .seminar-data .service-inner-img {
+        width: 100%;
+        object-fit: fill;
+    }
+    .program-title {
+        font-size: 23px !important;
+    }
+    .internship-title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    .menu-bar .dropdown-header {
+        padding: 0px 0px 0px 13px !important;
+    }
+    .menu-bar .navbar-collapse {
+        float: none;
+    }
+    .menu-bar .navbar-header {
+        width: 100%;
+    }
+    .nav-main a {
+        font-size: 15px !important;
+    }
+    #navbar-main {
+        background: #fff;
+    }
+    .navbar-default .navbar-nav>li>a {
+        color: #000;
+        margin-top: 10px;
+    }
+    .nav-main li {
+        border-bottom: none;
+    }
+    .nav-main li.menu-active {
+        border-bottom: none;
+    }
+    .nav-main li:hover {
+        border-bottom: 0px;
+    }
+    .slider-content-2 ul {
+        float: none;
+    }
+    .slider-content-4 ul li {
+        width: 44%;
+        margin-top: 30px;
+    }
+    .slider-content-2 img {
+        width: 40px;
+        display: block;
+        margin: 0px auto;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .slider-content-2 ul {
+        margin-top: 16px;
+    }
+    .slider-content-2 ul li {
+        width: 32%;
+        height: 102px;
+        font-size: 12px;
+    }
+    .home-about-paragarph ul li {
+        width: 49%;
+    }
+    .about-us-text ul li {
+        width: 100%;
+    }
+    .home-banner-text h2 {
+        font-size: 21px;
+    }
+    .slider-content-1 h1 {
+        font-size: 21px;
+    }
+    .online-right-data ul li {
+        width: 100%;
+    }
+    .online-banner-main {
+        padding: 0px 0px 60px 0px;
+    }
+    .service-consult-us h3 {
+        margin-top: 30px !important;
+    }
+}
+
+@media screen and (max-width:641px) and (min-width:640px) {
+    .root-round-shape1::before {
+        left: 44%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .slider-content-2 h1 {
+        font-size: 16px;
+        margin-top: 0px;
+    }
+    .slider .home-banner-text {
+        top: 0px;
+    }
+    .slider-content-4 h2 {
+        font-size: 26px;
+    }
+    .slider-content-4 ul li {
+        width: 45%;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    .slider-content-3 p {
+        font-size: 15px !important;
+    }
+    .slider-content-2 p {
+        font-size: 17px !important;
+    }
+    .slider-content-1 p {
+        font-size: 16px !important;
+    }
+    .contact-paragraph li {
+        width: 100%;
+    }
+    .home-about-paragarph ul li {
+        width: 100%;
+    }
+    .about-us-text ul li {
+        width: 100%;
+    }
+    .slider-content-5 h2 {
+        margin-top: 15px;
+    }
+    .slider-content-5 ul {
+        margin-top: 8px;
+    }
+    .slider-content-5 h2 span {
+        font-size: 12px;
+    }
+    .slider-content-5 h2 {
+        font-size: 14px !important;
+        width: auto;
+    }
+    .online-session {
+        font-size: 17px !important;
+    }
+    .web-social-right-inner {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .nav-main a {
+        padding: 0px 5px !important;
+        max-width: 255px;
+    }
+    .slider-content {
+        width: 300px;
+    }
+    .view-all-btn {
+        padding: 14px 24px;
+    }
+    .testimonial-waper form {
+        width: 290px;
+    }
+    #subscribeSucess {
+        width: 290px;
+    }
+    #subscribeError {
+        width: 290px;
+    }
+    .feedback-item img {
+        width: 110px;
+        height: 110px;
+    }
+    .feedback-img {
+        height: 190px;
+    }
+    .feedback-indicators {
+        bottom: -67px;
+    }
+    .feedback-Controls .left {
+        top: 220px;
+    }
+    .feedback-Controls .left {
+        left: 25%;
+    }
+    .feedback-Controls .right {
+        right: 26%;
+    }
+    .feedback-Controls .right {
+        top: 220px;
+    }
+    .testimonial-waper {
+        margin-top: 0px;
+    }
+    .root1 {
+        width: 31%;
+    }
+    .root1 p {
+        padding-top: 42%;
+        font-size: 14px;
+    }
+    .root-round-shape1::before {
+        left: 46%;
+    }
+    .service-tab-menu li {
+        width: 104px;
+    }
+    .service-tab-menu a {
+        width: 104px;
+    }
+    .service-tab-menu li .tabimg3 {
+        background-size: 86%;
+    }
+    .banner-text h4 {
+        font-size: 30px;
+        margin-left: 5%;
+        width: inherit;
+    }
+    .team-data {
+        padding-top: 27px;
+        padding-bottom: 0px;
+    }
+    .team-appointment-box h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .team-appointment-box {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .team-appointment-box a {
+        margin-right: 5px;
+        margin-top: 8px;
+    }
+    .service-heading1 {
+        font-size: 26px;
+    }
+    .form-inner form {
+        padding-bottom: 14%;
+    }
+    .home-banner-text p {
+        font-size: 14px !important;
+    }
+    .root1::before {
+        left: 50%;
+    }
+    .root-main4 {
+        width: 45%;
+    }
+    .root-main4::before {
+        height: 179px;
+        top: -139px;
+        left: 71% !important;
+    }
+    .root-main1::before {
+        height: 52px;
+        top: -9px;
+    }
+    .root-main2::before {
+        height: 49px;
+        top: -9px;
+    }
+    .root-shape4::before {
+        left: 69% !important;
+    }
+    .root-main4 p {
+        padding-left: 40%;
+        padding-top: 25%;
+    }
+    .root-main5::before {
+        height: 150px;
+        top: -109px;
+    }
+    .service-offer-data {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .team-head {
+        padding-top: 12%;
+    }
+}
+
+@media screen and (max-width:569px) and (min-width:568px) {
+    .root-main4::before {
+        top: -130px;
+    }
+    .root-main5::before {
+        top: -100px;
+    }
+}
+
+@media screen and (max-width:481px) and (min-width:480px) {
+    .root-main1::before {
+        height: 78px;
+        top: -28px;
+    }
+    .root-shape4::before {
+        left: 68%;
+    }
+    .root-main2::before {
+        height: 75px;
+        top: -30px;
+    }
+    .root-main4 p {
+        padding-top: 34%;
+    }
+    .root-main4::before {
+        height: 170px;
+        top: -120px;
+        left: 71% !important;
+    }
+}
+
+@media screen and (max-width:479px) {
+    .home-banner-text h3 {
+        font-size: 20px;
+    }
+    .feedback-item img {
+        width: 75px;
+        height: 75px;
+    }
+    .all-in-one p {
+        font-size: 22px;
+    }
+    .all-in-one {
+        width: 64%;
+    }
+    .down-arrow {
+        left: 43%;
+    }
+    .services-ifno-text h1 {
+        font-size: 34px;
+    }
+    .service-consult-us {
+        padding-top: 0px;
+    }
+    .consult-hadding2 {
+        font-size: 16px;
+    }
+    .service-offer {
+        padding-top: 0px;
+    }
+    .offer-hadding2 {
+        font-size: 21px;
+    }
+    .service-tab-menu a {
+        width: 100%;
+    }
+    .service-tab-menu li {
+        width: 23%;
+        margin-right: 3px;
+    }
+    .service-tab-menu li .tabimg1 {
+        background-size: 60%;
+    }
+    .service-tab-menu li .tabimg2 {
+        background-size: 92%;
+    }
+    .service-tab-menu li .tabimg3 {
+        background-size: 92%;
+    }
+    .service-tab-menu li .tabimg4 {
+        background-size: 92%;
+    }
+    .service-tab-menu .active::before {
+        left: 30%;
+    }
+    .banner-text h4 {
+        font-size: 20px;
+        line-height: 35px;
+    }
+    .banner-text span {
+        font-size: 25px;
+    }
+    .about-banner-text {
+        right: 1%;
+        top: 0;
+    }
+    .about-banner-text h2 {
+        font-size: 25px;
+    }
+    .about-banner-text h4 {
+        font-size: 13px;
+    }
+    .about-banner-text h5 {
+        font-size: 14px;
+    }
+    .form-inner form {
+        padding-bottom: 22%;
+    }
+    .top-popup .modal-body {
+        padding: 6% 7% 18% 7%;
+    }
+    .box-heading {
+        font-size: 21px;
+        margin-top: 23px;
+        margin-bottom: 20px;
+    }
+    .subcription-popup {
+        padding: 6% 7% 3% 7% !important;
+    }
+    .feedback-Controls .right {
+        right: 20%;
+    }
+    .feedback-Controls .left {
+        left: 20%;
+    }
+    .root1 p {
+        padding-top: 68%;
+    }
+    .root-main4 p {
+        padding-top: 56%;
+    }
+    .root-main2::before {
+        height: 71px;
+        top: -30px;
+    }
+    .root-main5::before {
+        height: 127%;
+        top: -110px;
+    }
+    .round-shape4::before {
+        left: 10.1%;
+        top: -19px;
+    }
+    .round-shape3::before {
+        top: -17px;
+        right: 11%;
+    }
+    .banner-text {
+        top: 2%;
+    }
+    .root-round-shape1::before {
+        left: 42%;
+    }
+}
+
+@media screen and (max-width:414px) and (min-width:412px) {
+    .root-main1::before {
+        height: 84px;
+        top: -31px;
+    }
+    .root-main4::before {
+        height: 179px;
+        top: -136px;
+        left: 70%;
+    }
+    .root-main5::before {
+        height: 142%;
+        top: -129px;
+    }
+    .root-round-shape1::before {
+        left: 44%;
+    }
+    .root-shape4::before {
+        left: 66% !important;
+    }
+}
+
+@media screen and (max-width:361px) and (min-width:360px) {
+    .root-main4::before {
+        height: 187px;
+        top: -144px;
+    }
+    .root-main5::before {
+        height: 129%;
+        top: -119px;
+    }
+    .root-shape4::before {
+        left: 65% !important;
+    }
+}
+
+@media screen and (max-width:376px) and (min-width:375px) {
+    .root-main4::before {
+        height: 189px;
+        top: -148px;
+    }
+    .root-main5::before {
+        height: 127%;
+        top: -123px;
+    }
+}
+
+@media screen and (max-width:385px) and (min-width:384px) {
+    .root-main4::before {
+        height: 190px;
+        top: -149px;
+        left: 73% !important;
+    }
+    .root-round-shape1::before {
+        left: 43%;
+    }
+    .root-main5::before {
+        height: 127%;
+        top: -123px;
+    }
+    .root-shape4::before {
+        left: 68%;
+    }
+}
