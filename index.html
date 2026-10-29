@@ -127,9 +127,6 @@
     <div class="preloader__curtain"></div>
   </div>
 
-  <!-- Custom Cursor -->
-  <div class="cursor" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
 
   <!-- Header & Navigation -->
   <header class="site-header" role="banner">
@@ -689,28 +686,16 @@
     <!-- 4. COURSES SECTION (Interactive Slider with Native Drag & Navigation Controls) -->
     <section class="courses section-pad" id="courses" aria-labelledby="courses-heading">
       <div class="container">
-        <div class="courses__header js-reveal">
+        <div class="courses__header courses__header--center js-reveal">
           <div class="courses__header-text">
             <div class="section-label">Our Curriculum</div>
             <h2 class="section-title" id="courses-heading">Featured <span class="gradient-text">Courses</span></h2>
             <p class="section-intro">Professional and career-oriented programs designed for psychologists, counsellors, teachers, parents, and wellness practitioners.</p>
           </div>
-          <div class="courses__nav-controls" aria-label="Course navigation controls">
-            <button class="courses__nav-btn" id="courses-prev" aria-label="Previous Course">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </button>
-            <div class="courses__counter" id="courses-counter">
-              <span class="curr" id="courses-current">01</span><span class="sep">/</span><span class="total">05</span>
-            </div>
-            <button class="courses__nav-btn" id="courses-next" aria-label="Next Course">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
-          </div>
         </div>
-      </div>
 
-      <div class="courses__scroll-wrap" id="courses-scroll-wrap" tabindex="0" aria-label="Scrollable course list">
-        <div class="courses__track" id="courses-track">
+        <!-- 3 + 2 All-Visible Grid (Top 3, Bottom 2 Centered) -->
+        <div class="courses-grid" id="courses-grid">
 
           <!-- Course 1 -->
           <article class="course-card js-reveal" tabindex="0" aria-label="Child Counselling Certificate Course">
@@ -853,20 +838,33 @@
           </article>
 
         </div>
-      </div>
 
-      <div class="courses__progress-wrap container" aria-hidden="true">
-        <div class="courses__progress-bar">
-          <div class="courses__progress-fill" id="courses-progress-fill"></div>
+        <!-- Additional PGD Mention Banner (High-Conversion Callout Strip) -->
+        <div class="courses__pgd-banner js-reveal">
+          <div class="pgd-banner__left">
+            <div class="pgd-banner__badge">
+              <span class="pulse-dot"></span>
+              <span>Advanced Academic Program</span>
+            </div>
+            <h3 class="pgd-banner__title">Post Graduate Diploma in Counselling Psychology (PGDCP)</h3>
+            <p class="pgd-banner__desc">Intensive 1-year clinical diploma program with supervised hospital internship exposure, case presentations, and recognized academic certification.</p>
+          </div>
+          <div class="pgd-banner__right">
+            <div class="pgd-banner__meta">
+              <span class="pgd-meta-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>1 Year Duration</span>
+              </span>
+              <span class="pgd-meta-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path></svg>
+                <span>PG Diploma</span>
+              </span>
+            </div>
+            <a href="#contact" class="btn btn--pill btn--blue pgd-banner__btn">
+              <span>Enquire Curriculum &amp; Intake &rarr;</span>
+            </a>
+          </div>
         </div>
-      </div>
-
-      <!-- Additional PGD Mention -->
-      <div class="container">
-        <p class="courses__pgd-note js-reveal">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
-          <span>Also offered: <strong>Post Graduate Diploma in Counselling Psychology</strong>. <a href="#contact" class="text-link">Enquire now</a> for curriculum and intake schedules.</span>
-        </p>
       </div>
     </section>
 
@@ -1277,14 +1275,21 @@
           <!-- Video 2 -->
           <article class="video-card js-reveal">
             <div class="video-card__frame-wrap">
-              <iframe
-                src="https://www.youtube.com/embed/6Zdv_EI5Z0M?embeds_referring_euri=https%3A%2F%2Fgyanjog.org%2F&amp;rel=0"
-                title="Review Of Child Counselling Course - Psychologist Chandan Chakraborty"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen>
-              </iframe>
+              <a href="https://www.youtube.com/watch?v=6Zdv_EI5Z0M" target="_blank" rel="noopener noreferrer" class="video-card__thumb-link" aria-label="Watch Review Of Child Counselling Course on YouTube">
+                <picture>
+                  <source srcset="assets/img/videos/video-2-thumb.webp" type="image/webp">
+                  <img src="assets/img/videos/video-2-thumb.jpg" alt="Review Of Child Counselling Course - Chandan Chakraborty" width="800" height="450" loading="lazy" decoding="async">
+                </picture>
+                <div class="video-card__play-overlay">
+                  <span class="video-card__play-btn" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="video-card__watch-pill">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>Play on YouTube</span>
+                  </span>
+                </div>
+              </a>
             </div>
             <div class="video-card__meta">
               <div class="video-card__header-row">
@@ -1889,7 +1894,7 @@
       <div class="container">
         <div class="section__header section__header--center js-reveal">
           <span class="badge badge--violet">Mentors &amp; Leadership</span>
-          <h2 class="h2 section__title" id="team-heading">Guiding Minds, Shaping Careers</h2>
+          <h2 class="h2 section__title" id="team-heading">Guiding Minds, Shaping <span class="gradient-text">Careers</span></h2>
           <p class="section__desc">Meet our accredited psychologists, certified trainers, and dedicated counselors across West Bengal and Bangladesh.</p>
         </div>
 
@@ -1918,7 +1923,7 @@
               <h3 class="chairman-card__name">Chandan Chakraborty</h3>
               
               <p class="chairman-card__lead">
-                Pioneer in child counselling, neuro-linguistic programming, and applied mind science across Eastern India. Dedicated to making clinical mental wellness and accredited psychological training universally accessible to every school, educator, and household.
+                Pioneer in child counselling, neuro-linguistic programming (NLP), and applied mind sciences. Dedicated to making clinical mental wellness and accredited psychological training universally accessible across Eastern India.
               </p>
 
               <!-- Executive Metric Pillars -->
@@ -1942,13 +1947,7 @@
                 <span class="specialty-pill">Child &amp; Adolescent Psychology</span>
                 <span class="specialty-pill">Clinical Hypnotherapy</span>
                 <span class="specialty-pill">NLP Master Practitioner</span>
-                <span class="specialty-pill">Mind Sciences &amp; Spiritual Therapy</span>
               </div>
-
-              <!-- Quote Philosophy -->
-              <blockquote class="chairman-card__quote">
-                &ldquo;Empowering human minds with authentic psychological wisdom to overcome anxiety, heal emotional wounds, and discover their true inner potential.&rdquo;
-              </blockquote>
 
               <div class="chairman-card__actions">
                 <a href="#contact" class="btn btn--pill btn--blue">
@@ -2254,42 +2253,36 @@
     <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-heading">
       <div class="container">
         <div class="section__header section__header--center js-reveal">
-          <span class="badge badge--amber">
-            <svg width="15" height="15" viewBox="0 0 24 24" class="google-badge-icon" aria-hidden="true">
-              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-            </svg>
-            <span>Verified Google Reviews</span>
-          </span>
           <h2 class="h2 section__title" id="testimonials-heading">Voices of <span class="gradient-text">Transformation</span></h2>
           <p class="section__desc">Real, unfiltered feedback submitted by students, certified psychologists, and school teachers on Google Maps.</p>
+        </div>
 
-          <!-- Google Rating Summary Pill -->
-          <div class="google-rating-summary">
-            <div class="google-rating-summary__brand">
-              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <!-- Full-Width Google Trust Banner -->
+        <div class="google-trust-banner js-reveal">
+          <div class="google-trust-banner__main">
+            <div class="google-trust-brand">
+              <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
               </svg>
-              <div class="google-rating-score">
+              <div class="google-trust-score">
                 <span class="score-num">4.9</span>
                 <div class="score-stars" aria-label="4.9 out of 5 stars">★★★★★</div>
               </div>
             </div>
-            <div class="google-rating-divider"></div>
-            <div class="google-rating-meta">
-              <span class="meta-highlight">140+ Verified Reviews</span>
-              <span class="meta-sub">Google Maps &bull; 100% Genuine Student Rating</span>
+            <div class="google-trust-divider"></div>
+            <div class="google-trust-info">
+              <span class="google-trust-highlight">140+ Verified Reviews on Google Maps</span>
+              <span class="google-trust-sub">100% Genuine Public Ratings from Certified Counselors &amp; Trainees</span>
             </div>
-            <a href="https://maps.google.com/?q=Gyanjog+Group+Howrah" target="_blank" rel="noopener noreferrer" class="google-verify-link">
-              <span>View on Maps</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
           </div>
+          <a href="https://maps.google.com/?q=Gyanjog+Group+Howrah" target="_blank" rel="noopener noreferrer" class="google-trust-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Read All Google Reviews</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
         </div>
 
         <div class="testimonials__carousel-wrap js-reveal">
@@ -2935,7 +2928,7 @@
       <div class="container">
         <div class="section__header section__header--center js-reveal">
           <span class="badge badge--blue">Get In Touch</span>
-          <h2 class="h2 section__title" id="contact-heading">Begin Your Transformation</h2>
+          <h2 class="h2 section__title" id="contact-heading">Begin Your <span class="gradient-text">Transformation</span></h2>
           <p class="section__desc">Connect with our academic counselors for syllabus details, admission criteria, or institutional collaborations.</p>
         </div>
 

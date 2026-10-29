@@ -39,7 +39,7 @@
     initTestimonialsCarousel();
     initGalleryLightbox();
     initContactForm();
-    initCursorAndMagnetic();
+    initMagneticButtons();
     initBackToTop();
 
     // Refresh triggers after fonts and resources settle
@@ -916,24 +916,9 @@
     });
   }
 
-  // 16. Custom Cursor & Magnetic Buttons (pointer: fine only)
-  function initCursorAndMagnetic() {
+  // 16. Magnetic Buttons (pointer: fine only)
+  function initMagneticButtons() {
     if (!window.matchMedia('(pointer: fine) and (hover: hover)').matches) return;
-
-    const cursor = document.querySelector('.cursor');
-    const dot = document.querySelector('.cursor-dot');
-    if (!cursor || !dot) return;
-
-    window.addEventListener('mousemove', (e) => {
-      gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0.1, ease: 'none' });
-      gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.35, ease: 'power2.out' });
-    });
-
-    const interactiveEls = document.querySelectorAll('a, button, input, textarea, .course-card, .team-card, .gallery__item');
-    interactiveEls.forEach((el) => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('is-hovering'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('is-hovering'));
-    });
 
     // Magnetic Buttons
     const magneticBtns = document.querySelectorAll('[data-magnetic]');
