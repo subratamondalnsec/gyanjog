@@ -176,10 +176,12 @@
     window.addEventListener('scroll', () => {
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > 80) {
+      if (currentScrollY > 40) {
         navbar.classList.add('scrolled');
+        header.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
+        header.classList.remove('scrolled');
       }
 
       if (currentScrollY > 300 && currentScrollY > lastScrollY && !mobileNav.classList.contains('is-open')) {
@@ -221,69 +223,199 @@
     }
   }
 
-  // 6. Hero Slideshow & Entrance Animation
+  // 6. Hero Showcase Slideshow & Entrance Animation
   let currentSlide = 0;
   let slideTimer = null;
+  let progressTween = null;
 
   function startHeroIntro() {
+    const badge = document.querySelector('.hero__badge');
     const headline = document.querySelector('.hero__headline');
     const lines = document.querySelectorAll('.hero__line');
     const sub = document.querySelector('.hero__sub');
     const ctas = document.querySelector('.hero__ctas');
-    const stats = document.querySelectorAll('.hero__stat-card');
-    const scrollHint = document.querySelector('.hero__scroll-hint');
+    const showcase = document.querySelector('.hero__showcase');
+    const statsDeck = document.querySelector('.hero__stats-deck');
+    const statCards = document.querySelectorAll('.hero__stat-card');
 
-    const tl = gsap.timeline({ defaults: { ease: EASE, duration: DUR } });
-
+    if (badge) badge.classList.remove('js-hidden');
     if (headline) headline.classList.remove('js-hidden');
     if (sub) sub.classList.remove('js-hidden');
     if (ctas) ctas.classList.remove('js-hidden');
-    if (scrollHint) scrollHint.classList.remove('js-hidden');
-    stats.forEach((s) => s.classList.remove('js-hidden'));
+    if (showcase) showcase.classList.remove('js-hidden');
+    if (statsDeck) statsDeck.classList.remove('js-hidden');
+
+    const tl = gsap.timeline({ defaults: { ease: EASE, duration: DUR } });
+
+    if (badge) {
+      tl.fromTo(badge, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 });
+    }
 
     tl.fromTo(
       lines,
       { y: '115%', opacity: 0 },
-      { y: '0%', opacity: 1, duration: 1, stagger: 0.15, ease: 'power4.out' }
+      { y: '0%', opacity: 1, duration: 0.9, stagger: 0.12, ease: 'power4.out' },
+      badge ? '-=0.3' : 0
     )
-      .fromTo(sub, { y: 24, opacity: 0 }, { y: 0, opacity: 1 }, '-=0.6')
-      .fromTo(ctas, { y: 24, opacity: 0 }, { y: 0, opacity: 1 }, '-=0.6')
-      .fromTo(stats, { y: 30, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1 }, '-=0.5')
-      .fromTo(scrollHint, { opacity: 0 }, { opacity: 0.8 }, '-=0.4');
+      .fromTo(sub, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, '-=0.5')
+      .fromTo(ctas, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, '-=0.5')
+      .fromTo(showcase, { y: 35, opacity: 0, scale: 0.98 }, { y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }, '-=0.4')
+      .fromTo(statCards, { y: 25, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 0.7 }, '-=0.6');
 
-    initHeroSlideshow();
+    initHeroShowcase();
   }
 
-  function initHeroSlideshow() {
+  function initHeroShowcase() {
+    const showcase = document.querySelector('.hero__showcase');
     const slides = document.querySelectorAll('.hero__slide');
     const dots = document.querySelectorAll('.hero__dot');
-    if (slides.length <= 1) return;
+    const prevBtn = document.querySelector('.hero__nav-btn--prev');
+    const nextBtn = document.querySelector('.hero__nav-btn--next');
+    const captionContainer = document.querySelector('.hero__showcase-caption') || document.querySelector('.hero__caption-pill');
+    const captionIcon = document.getElementById('hero-caption-icon');
+    const captionTag = document.getElementById('hero-caption-tag');
+    const captionTitle = document.getElementById('hero-caption-title');
+    const currentNumEl = document.getElementById('hero-current-num');
+    const totalNumEl = document.getElementById('hero-total-num');
+    const progressFill = document.getElementById('hero-progress-fill');
+
+    if (!slides.length) return;
+    if (totalNumEl) totalNumEl.textContent = String(slides.length).padStart(2, '0');
+
+    const SLIDE_DURATION = 6000;
+
+    function updateCaption(slideEl) {
+      if (!captionContainer || !slideEl) return;
+      const icon = slideEl.getAttribute('data-caption-icon') || '🏆';
+      const tag = slideEl.getAttribute('data-caption-tag') || 'Highlight';
+      const title = slideEl.getAttribute('data-caption-title') || '';
+
+      gsap.to(captionContainer, {
+        opacity: 0,
+        y: 6,
+        duration: 0.2,
+        ease: 'power2.in',
+        onComplete: () => {
+          if (captionIcon) captionIcon.textContent = icon;
+          if (captionTag) captionTag.innerHTML = tag;
+          if (captionTitle) captionTitle.innerHTML = title;
+          gsap.to(captionContainer, {
+            opacity: 1,
+            y: 0,
+            duration: 0.35,
+            ease: 'power2.out',
+          });
+        },
+      });
+    }
+
+    function animateProgress() {
+      if (!progressFill) return;
+      if (progressTween) progressTween.kill();
+      gsap.set(progressFill, { width: '0%' });
+      progressTween = gsap.to(progressFill, {
+        width: '100%',
+        duration: SLIDE_DURATION / 1000,
+        ease: 'none',
+      });
+    }
 
     function goToSlide(index) {
-      if (index === currentSlide) return;
+      if (index === currentSlide && slides[currentSlide].classList.contains('hero__slide--active')) return;
       slides[currentSlide].classList.remove('hero__slide--active');
-      dots[currentSlide].classList.remove('hero__dot--active');
-      dots[currentSlide].setAttribute('aria-selected', 'false');
+      slides[currentSlide].setAttribute('aria-hidden', 'true');
+      if (dots[currentSlide]) {
+        dots[currentSlide].classList.remove('hero__dot--active');
+        dots[currentSlide].setAttribute('aria-selected', 'false');
+      }
 
       currentSlide = (index + slides.length) % slides.length;
 
       slides[currentSlide].classList.add('hero__slide--active');
-      dots[currentSlide].classList.add('hero__dot--active');
-      dots[currentSlide].setAttribute('aria-selected', 'true');
+      slides[currentSlide].setAttribute('aria-hidden', 'false');
+      if (dots[currentSlide]) {
+        dots[currentSlide].classList.add('hero__dot--active');
+        dots[currentSlide].setAttribute('aria-selected', 'true');
+      }
+
+      if (currentNumEl) {
+        currentNumEl.textContent = String(currentSlide + 1).padStart(2, '0');
+      }
+
+      updateCaption(slides[currentSlide]);
+      animateProgress();
     }
 
     dots.forEach((dot, idx) => {
       dot.addEventListener('click', () => {
-        clearInterval(slideTimer);
+        resetTimer();
         goToSlide(idx);
-        startAutoSlide();
       });
     });
 
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        resetTimer();
+        goToSlide(currentSlide - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        resetTimer();
+        goToSlide(currentSlide + 1);
+      });
+    }
+
     function startAutoSlide() {
+      animateProgress();
       slideTimer = setInterval(() => {
         goToSlide(currentSlide + 1);
-      }, 5500);
+      }, SLIDE_DURATION);
+    }
+
+    function resetTimer() {
+      clearInterval(slideTimer);
+      startAutoSlide();
+    }
+
+    // Smooth hover: pause only when directly interacting with navigation controls so photo slideshow continues seamlessly
+    const controls = document.querySelector('.hero__showcase-controls');
+    if (controls) {
+      controls.addEventListener('mouseenter', () => {
+        clearInterval(slideTimer);
+        if (progressTween) progressTween.pause();
+      });
+
+      controls.addEventListener('mouseleave', () => {
+        if (progressTween) progressTween.resume();
+        slideTimer = setInterval(() => {
+          goToSlide(currentSlide + 1);
+        }, SLIDE_DURATION);
+      });
+    }
+
+    if (showcase) {
+
+      // Touch swipe support
+      let touchStartX = 0;
+      let touchEndX = 0;
+      showcase.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      showcase.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 45) {
+          resetTimer();
+          if (diff > 0) {
+            goToSlide(currentSlide + 1);
+          } else {
+            goToSlide(currentSlide - 1);
+          }
+        }
+      }, { passive: true });
     }
 
     startAutoSlide();
@@ -317,7 +449,7 @@
       const counterObj = { val: 0 };
       ScrollTrigger.create({
         trigger: el,
-        start: 'top 85%',
+        start: 'top 95%',
         once: true,
         onEnter: () => {
           gsap.to(counterObj, {

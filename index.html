@@ -134,11 +134,8 @@
   <!-- Header & Navigation -->
   <header class="site-header" role="banner">
     <nav class="navbar" role="navigation" aria-label="Main navigation">
-      <a class="navbar__logo" href="#top" aria-label="Gyanjog Group ? Back to top">
-        <picture>
-          <source srcset="assets/img/logos/logo-main.webp" type="image/webp">
-          <img src="assets/img/logos/logo-main.png" alt="Gyanjog Group Logo" width="160" height="53">
-        </picture>
+      <a class="navbar__logo" href="#top" aria-label="Gyanjog Group - Back to top">
+        <img src="assets/img/logos/logo-main.png" alt="Gyanjog Group Logo" width="170" height="56" class="navbar__logo-img">
       </a>
 
       <!-- Desktop Links -->
@@ -190,14 +187,15 @@
           <a href="#branches" class="nav-link" aria-haspopup="true" aria-expanded="false">Branches</a>
           <div class="mega-menu mega-menu--branches" role="menu">
             <ul>
-              <li role="menuitem"><a href="#branches">Bagnan ? Howrah ? Dum Dum</a></li>
-              <li role="menuitem"><a href="#branches">Ranaghat ? Canning ? Kalyani</a></li>
-              <li role="menuitem"><a href="#branches">Burdwan ? Garia ? Raiganj</a></li>
-              <li role="menuitem"><a href="#branches">View all 22 branches?</a></li>
+              <li role="menuitem"><a href="#branches">Bagnan &bull; Howrah &bull; Dum Dum</a></li>
+              <li role="menuitem"><a href="#branches">Ranaghat &bull; Canning &bull; Kalyani</a></li>
+              <li role="menuitem"><a href="#branches">Burdwan &bull; Garia &bull; Raiganj</a></li>
+              <li role="menuitem"><a href="#branches">View all 22 branches &rarr;</a></li>
             </ul>
           </div>
         </li>
 
+        <li><a href="#video-sessions" class="nav-link">Videos</a></li>
         <li><a href="#team" class="nav-link">Team</a></li>
         <li><a href="#gallery" class="nav-link">Gallery</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -224,6 +222,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#govt-courses">Govt. Courses</a></li>
         <li><a href="#courses">Courses</a></li>
+        <li><a href="#video-sessions">Videos</a></li>
         <li><a href="#branches">Branches</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#gallery">Gallery</a></li>
@@ -239,86 +238,117 @@
   <main id="main-content">
 
     <!-- 1. HERO SECTION -->
-    <section class="hero" aria-label="Hero slideshow">
-      <div class="hero__slides" aria-live="polite" aria-atomic="true">
-        <div class="hero__slide hero__slide--active" aria-hidden="false">
-          <picture>
-            <source srcset="assets/img/hero/hero-1.webp" type="image/webp">
-            <img src="assets/img/hero/hero-1.jpg" alt="Gyanjog Group Grand Keynote Presentation in Packed Auditorium" width="1350" height="506" fetchpriority="high" decoding="sync">
-          </picture>
-        </div>
-        <div class="hero__slide" aria-hidden="true">
-          <picture>
-            <source srcset="assets/img/hero/hero-2.webp" type="image/webp">
-            <img src="assets/img/hero/hero-2.jpg" alt="Chairman Chandan Chakraborty Addressing School Student Assembly" width="1350" height="506" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <div class="hero__slide" aria-hidden="true">
-          <picture>
-            <source srcset="assets/img/hero/hero-3.webp" type="image/webp">
-            <img src="assets/img/hero/hero-3.jpg" alt="Gyanjog Group Convocation Ceremony with Certified Graduates" width="1350" height="506" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <div class="hero__slide" aria-hidden="true">
-          <picture>
-            <source srcset="assets/img/hero/hero-4.webp" type="image/webp">
-            <img src="assets/img/hero/hero-4.jpg" alt="Chandan Chakraborty Receiving Shikshar Gourab National Education Award" width="1350" height="506" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <div class="hero__slide" aria-hidden="true">
-          <picture>
-            <source srcset="assets/img/hero/hero-5.webp" type="image/webp">
-            <img src="assets/img/hero/hero-5.jpg" alt="Gyanjog Group Faculty and Academic Training Team on Stage" width="1350" height="506" loading="lazy" decoding="async">
-          </picture>
-        </div>
-      </div>
+    <section class="hero" id="hero" aria-label="Hero section">
+      <div class="hero__ambient-glow" aria-hidden="true"></div>
 
-      <div class="hero__overlay" aria-hidden="true"></div>
+      <!-- Top Headline & Introduction -->
+      <div class="hero__intro">
+        <div class="hero__badge js-hidden">
+          <span class="hero__badge-pulse" aria-hidden="true"></span>
+          <span>Recognised by NITI Aayog &amp; MCA &bull; 22 Branches</span>
+        </div>
 
-      <div class="hero__content">
         <h1 class="hero__headline js-hidden" aria-label="Understand the Mind. Transform Lives.">
-          <span class="hero__line-wrap"><span class="hero__line">Understand the Mind.</span></span>
-          <span class="hero__line-wrap"><span class="hero__line">Transform Lives.</span></span>
+          <span class="hero__line-wrap"><span class="hero__line">Understand the Mind. <span class="hero__line--accent">Transform Lives.</span></span></span>
         </h1>
+
         <p class="hero__sub js-hidden">
-          Psychology ? Counselling ? Mind Sciences ? Spiritual Development<br>
-          <strong>22 Branches</strong> across West Bengal &amp; Bangladesh
+          Professional training in <strong>Psychology</strong> &bull; <strong>Counselling</strong> &bull; <strong>Mind Sciences</strong> &bull; <strong>Spiritual Development</strong>
         </p>
+
         <div class="hero__ctas js-hidden">
-          <a href="#courses" class="btn btn--pill btn--blue magnetic-btn" data-magnetic>Explore Courses</a>
-          <a href="#contact" class="btn btn--pill btn--outline-white magnetic-btn" data-magnetic>Enquire Now</a>
+          <a href="#courses" class="btn btn--pill btn--blue magnetic-btn" data-magnetic>
+            <span>Explore Courses</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#contact" class="btn btn--pill btn--amber magnetic-btn" data-magnetic>Enquire Now</a>
+          <a href="tel:+916289062507" class="hero__phone-badge">
+            <span class="hero__phone-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </span>
+            <span>+91-6289062507</span>
+          </a>
         </div>
       </div>
 
-      <!-- Floating Stat Cards -->
-      <div class="hero__stats" aria-label="Quick stats">
-        <div class="hero__stat-card stat-card js-hidden">
-          <span class="stat-card__num">22</span>
-          <span class="stat-card__label">Active<br>Branches</span>
-        </div>
-        <div class="hero__stat-card stat-card js-hidden">
-          <span class="stat-card__num">19</span>
-          <span class="stat-card__label">Faculty<br>Members</span>
-        </div>
-        <div class="hero__stat-card stat-card js-hidden">
-          <span class="stat-card__num">3500+</span>
-          <span class="stat-card__label">Students<br>Trained</span>
-        </div>
-      </div>
+      <!-- Stage & Event Photo Showcase Frame (100% Unobscured Stage Photos) -->
+      <div class="hero__showcase js-hidden" aria-label="Event Showcase Slideshow">
+        <div class="hero__showcase-glow" aria-hidden="true"></div>
 
-      <!-- Scroll Hint -->
-      <div class="hero__scroll-hint js-hidden" aria-hidden="true">
-        <div class="hero__scroll-line"></div>
-        <span class="hero__scroll-label">Scroll</span>
-      </div>
+        <!-- 1. Pure Photo Stage (100% Clear, No dark scrim over people's faces or clothes) -->
+        <div class="hero__slides-stage">
+          <div class="hero__slides" aria-live="polite" aria-atomic="true">
+            <div class="hero__slide hero__slide--active" aria-hidden="false" data-caption-icon="🏆" data-caption-tag="Convocation &amp; Certification" data-caption-title="Grand Keynote &amp; Certificate Presentation in Packed Auditorium">
+              <picture>
+                <source srcset="assets/img/hero/hero-1.webp" type="image/webp">
+                <img src="assets/img/hero/hero-1.jpg" alt="Gyanjog Group Grand Keynote Presentation in Packed Auditorium" width="1350" height="506" fetchpriority="high" decoding="sync">
+              </picture>
+            </div>
+            <div class="hero__slide" aria-hidden="true" data-caption-icon="🎙️" data-caption-tag="Youth &amp; School Outreach" data-caption-title="Founder Chandan Chakraborty Addressing School Student Assembly">
+              <picture>
+                <source srcset="assets/img/hero/hero-2.webp" type="image/webp">
+                <img src="assets/img/hero/hero-2.jpg" alt="Chairman Chandan Chakraborty Addressing School Student Assembly" width="1350" height="506" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="hero__slide" aria-hidden="true" data-caption-icon="🎓" data-caption-tag="Graduation Milestone" data-caption-title="Convocation Ceremony with Certified Psychological Counselors">
+              <picture>
+                <source srcset="assets/img/hero/hero-3.webp" type="image/webp">
+                <img src="assets/img/hero/hero-3.jpg" alt="Gyanjog Group Convocation Ceremony with Certified Graduates" width="1350" height="506" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="hero__slide" aria-hidden="true" data-caption-icon="🎖️" data-caption-tag="National Award" data-caption-title="Conferred with 'Shikshar Gourab' National Education Award">
+              <picture>
+                <source srcset="assets/img/hero/hero-4.webp" type="image/webp">
+                <img src="assets/img/hero/hero-4.jpg" alt="Chandan Chakraborty Receiving Shikshar Gourab National Education Award" width="1350" height="506" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="hero__slide" aria-hidden="true" data-caption-icon="👥" data-caption-tag="Faculty Leadership" data-caption-title="Gyanjog Core Academic Faculty &amp; Clinical Training Team on Stage">
+              <picture>
+                <source srcset="assets/img/hero/hero-5.webp" type="image/webp">
+                <img src="assets/img/hero/hero-5.jpg" alt="Gyanjog Group Faculty and Academic Training Team on Stage" width="1350" height="506" loading="lazy" decoding="async">
+              </picture>
+            </div>
+          </div>
 
-      <!-- Slide Dots -->
-      <div class="hero__dots" role="tablist" aria-label="Hero slides navigation">
-        <button class="hero__dot hero__dot--active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
-        <button class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
-        <button class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
-        <button class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
-        <button class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 5"></button>
+          <!-- Micro Progress Bar -->
+          <div class="hero__progress-bar" aria-hidden="true">
+            <div class="hero__progress-fill" id="hero-progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- 2. Integrated Control & Caption Footer Bar (Zero Overlap on Photos) -->
+        <div class="hero__showcase-footer">
+          <!-- Left: Event Milestone Information -->
+          <div class="hero__showcase-caption" aria-live="polite">
+            <div class="hero__caption-badge">
+              <span class="hero__caption-icon" id="hero-caption-icon">🏆</span>
+              <span class="hero__caption-tag" id="hero-caption-tag">Convocation &amp; Certification</span>
+            </div>
+            <h3 class="hero__caption-title" id="hero-caption-title">Grand Keynote &amp; Certificate Presentation in Packed Auditorium</h3>
+          </div>
+
+          <!-- Right: Interactive Controls (Prev / Next & 5 Indicator Bars) -->
+          <div class="hero__showcase-controls">
+            <!-- Prev Arrow -->
+            <button class="hero__nav-btn hero__nav-btn--prev" aria-label="Previous Slide">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+
+            <!-- 5 Sleek Indicators -->
+            <div class="hero__dots" role="tablist" aria-label="Hero slides navigation">
+              <button class="hero__dot hero__dot--active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+              <button class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+              <button class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+              <button class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+              <button class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 5"></button>
+            </div>
+
+            <!-- Next Arrow -->
+            <button class="hero__nav-btn hero__nav-btn--next" aria-label="Next Slide">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -327,139 +357,357 @@
       <div class="trust-strip__track" aria-hidden="true">
         <div class="trust-strip__inner">
           <span class="trust-strip__item">NITI Aayog, Government of India</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">Ministry of Corporate Affairs (MCA)</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">Government of West Bengal</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">Government of NCT Delhi</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">National Skill Development (NSDC)</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">Established under the Act of 1882</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">Glocal University</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">University Grants Commission (UGC)</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <!-- Duplicate for seamless loop -->
           <span class="trust-strip__item">NITI Aayog, Government of India</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">Ministry of Corporate Affairs (MCA)</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">Government of West Bengal</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">Government of NCT Delhi</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">National Skill Development (NSDC)</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">Established under the Act of 1882</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">Glocal University</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
           <span class="trust-strip__item">University Grants Commission (UGC)</span>
-          <span class="trust-strip__sep">?</span>
+          <span class="trust-strip__sep">&bull;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2B. IMPACT STATS SECTION (5 Key Milestones) -->
+    <section class="impact-stats" id="impact-stats" aria-label="Gyanjog Group Key Milestones">
+      <div class="container">
+        <div class="impact-stats__grid">
+          <!-- 1. 5 Core Courses -->
+          <div class="impact-stat-card js-reveal">
+            <div class="impact-stat-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <div class="impact-stat-card__content">
+              <div class="impact-stat-card__num"><span class="counter-num" data-target="5">5</span></div>
+              <div class="impact-stat-card__label">Core Courses</div>
+              <div class="impact-stat-card__sub">Professional Modules</div>
+            </div>
+          </div>
+
+          <!-- 2. 22 Active Branches -->
+          <div class="impact-stat-card js-reveal">
+            <div class="impact-stat-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="impact-stat-card__content">
+              <div class="impact-stat-card__num"><span class="counter-num" data-target="22">22</span></div>
+              <div class="impact-stat-card__label">Active Branches</div>
+              <div class="impact-stat-card__sub">WB &amp; Bangladesh</div>
+            </div>
+          </div>
+
+          <!-- 3. 9 Associate Schools -->
+          <div class="impact-stat-card js-reveal">
+            <div class="impact-stat-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <div class="impact-stat-card__content">
+              <div class="impact-stat-card__num"><span class="counter-num" data-target="9">9</span></div>
+              <div class="impact-stat-card__label">Associate Schools</div>
+              <div class="impact-stat-card__sub">Partner Institutions</div>
+            </div>
+          </div>
+
+          <!-- 4. 19 Faculty Members -->
+          <div class="impact-stat-card js-reveal">
+            <div class="impact-stat-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div class="impact-stat-card__content">
+              <div class="impact-stat-card__num"><span class="counter-num" data-target="19" data-suffix="+">19+</span></div>
+              <div class="impact-stat-card__label">Faculty Members</div>
+              <div class="impact-stat-card__sub">Senior Psychologists</div>
+            </div>
+          </div>
+
+          <!-- 5. 3,500+ Students Trained -->
+          <div class="impact-stat-card js-reveal">
+            <div class="impact-stat-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            <div class="impact-stat-card__content">
+              <div class="impact-stat-card__num"><span class="counter-num" data-target="3500" data-suffix="+">3,500+</span></div>
+              <div class="impact-stat-card__label">Students Trained</div>
+              <div class="impact-stat-card__sub">Across 2 Nations</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
     <!-- 3. ABOUT SECTION -->
     <section class="about section-pad" id="about" aria-labelledby="about-heading">
       <div class="container">
-        <div class="section-label js-reveal">About Us</div>
-        <h2 class="section-title js-reveal" id="about-heading">Welcome to <span class="gradient-text">Gyanjog Group</span></h2>
-        <p class="section-intro js-reveal">
-          Gyanjog Group is a nationally recognised educational and training organisation dedicated to excellence in Psychology, Counselling, Mind Sciences, and Spiritual Development. Under the Gyanjog Group, two specialised institutions are actively functioning.
-        </p>
+        <!-- Section Header: Executive Split Presentation -->
+        <div class="about__hero js-reveal">
+          <div class="about__hero-content">
+            <div class="about__badge-pill">
+              <span class="badge-dot"></span>
+              <span class="badge-text">About Gyanjog Group</span>
+              <span class="badge-divider">&bull;</span>
+              <span class="badge-sub">Est. Under Act of 1882</span>
+            </div>
 
-        <!-- Two Specialized Institutions -->
+            <h2 class="about__main-heading" id="about-heading">
+              Welcome to <span class="about__brand-title">Gyanjog Group</span>
+            </h2>
+
+            <p class="about__tagline">
+              Pioneering Excellence in Psychology, Counselling &amp; Spiritual Mind Sciences
+            </p>
+
+            <p class="about__lead-text">
+              Gyanjog Group is a nationally recognized educational and training organization dedicated to excellence in mental health sciences, psychological counselling, and holistic spiritual development. Operating under the <strong>Indian Trusts Act of 1882</strong>, we have established two specialized autonomous institutions with clear academic mandates to ensure authentic certification, academic credibility, and global relevance.
+            </p>
+
+            <div class="about__trust-chips">
+              <div class="about__trust-chip">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Govt. of West Bengal &amp; NCT Delhi</span>
+              </div>
+              <div class="about__trust-chip">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>NITI Aayog &amp; MCA Listed</span>
+              </div>
+              <div class="about__trust-chip">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Active in India &amp; Bangladesh</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Institutional Governance Card on Right -->
+          <aside class="about__governance-card" aria-label="Academic Structure &amp; Certification Authority">
+            <div class="gov-card__header">
+              <div class="gov-card__emblem" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="gov-card__meta">
+                <span class="gov-card__eyebrow">Academic Framework</span>
+                <h3 class="gov-card__title">Dual Certification Authority</h3>
+              </div>
+            </div>
+
+            <p class="gov-card__desc">
+              To ensure authentic certification, academic credibility, and professional excellence, academic functions are demarcated across two dedicated bodies:
+            </p>
+
+            <div class="gov-card__branches">
+              <div class="gov-branch gov-branch--clinical">
+                <div class="gov-branch__icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.07-4.25A3 3 0 0 1 5 12a3 3 0 0 1 3-3 2.5 2.5 0 0 1 1.5-7z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.07-4.25A3 3 0 0 0 19 12a3 3 0 0 0-3-3 2.5 2.5 0 0 0-1.5-7z"/></svg>
+                </div>
+                <div class="gov-branch__text">
+                  <h4 class="gov-branch__name">Genius Mind Brain Development Academy</h4>
+                  <p class="gov-branch__sub">Certifies all Psychology, Counselling &amp; Mental Health Programs</p>
+                </div>
+              </div>
+
+              <div class="gov-branch gov-branch--spiritual">
+                <div class="gov-branch__icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <div class="gov-branch__text">
+                  <h4 class="gov-branch__name">Gyanjog Institute of Psychology &amp; Spiritual Development</h4>
+                  <p class="gov-branch__sub">Certifies all Spiritual Science, Mind Training &amp; NLP Courses</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="gov-card__footer">
+              <span class="gov-tag">Authentic Certification</span>
+              <span class="gov-tag">Statutory Compliance</span>
+              <span class="gov-tag">Global Relevance</span>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Two Specialized Academic Pillars -->
         <div class="about__institutions">
+          <!-- Pillar 1 -->
           <article class="inst-card js-reveal">
-            <div class="inst-card__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.07-4.25A3 3 0 0 1 5 12a3 3 0 0 1 3-3 2.5 2.5 0 0 1 1.5-7z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.07-4.25A3 3 0 0 0 19 12a3 3 0 0 0-3-3 2.5 2.5 0 0 0-1.5-7z"/></svg>
+            <div class="inst-card__header">
+              <div class="inst-card__icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.07-4.25A3 3 0 0 1 5 12a3 3 0 0 1 3-3 2.5 2.5 0 0 1 1.5-7z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.07-4.25A3 3 0 0 0 19 12a3 3 0 0 0-3-3 2.5 2.5 0 0 0-1.5-7z"/></svg>
+              </div>
+              <span class="inst-card__badge">Clinical &amp; Counselling Authority</span>
             </div>
-            <h3>Genius Mind Brain Development Academy</h3>
-            <p>Certifies all Psychology, Counselling, and Mental Health?related courses. Ensuring authentic certification and professional clinical standards in mental health education.</p>
+            <h3 class="inst-card__title">Genius Mind Brain Development Academy</h3>
+            <p class="inst-card__desc">
+              The premier certification council of Gyanjog Group, certifying all formal professional programs in Psychology, Counselling, Child Guidance, and Mental Health therapy. Ensuring authentic clinical ethics, practical case-study frameworks, and recognized credentials.
+            </p>
+            <div class="inst-card__scope">
+              <span class="scope-tag">Child &amp; Adolescent Counselling</span>
+              <span class="scope-tag">Psychological Therapy &amp; CBT</span>
+              <span class="scope-tag">Career &amp; Educational Guidance</span>
+              <span class="scope-tag">Clinical Internship Standards</span>
+            </div>
           </article>
 
+          <!-- Pillar 2 -->
           <article class="inst-card js-reveal">
-            <div class="inst-card__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <div class="inst-card__header">
+              <div class="inst-card__icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <span class="inst-card__badge">Mind Sciences &amp; Consciousness</span>
             </div>
-            <h3>Gyanjog Institute of Psychology and Spiritual Development</h3>
-            <p>Certifies all Spiritual Science, Mind Training, and Consciousness-based courses. Bridging scientific methodologies with deep personal and spiritual transformation.</p>
+            <h3 class="inst-card__title">Gyanjog Institute of Psychology and Spiritual Development</h3>
+            <p class="inst-card__desc">
+              Dedicated to specialized education in Spiritual Sciences, Subconscious Conditioning, Neuro-Linguistic Programming (NLP), and Consciousness Studies. Harmonizing timeless Indian spiritual wisdom with contemporary empirical psychological sciences.
+            </p>
+            <div class="inst-card__scope">
+              <span class="scope-tag">Neuro Linguistic Programming (NLP)</span>
+              <span class="scope-tag">Subconscious Mind Reprogramming</span>
+              <span class="scope-tag">Residential Therapy Retreats</span>
+              <span class="scope-tag">Spiritual Psychology &amp; Meditation</span>
+            </div>
           </article>
         </div>
 
-        <!-- Real Statistic Counters -->
-        <div class="about__counters" aria-label="Key statistics">
-          <div class="counter-item js-reveal">
-            <span class="counter-num" data-target="5">0</span>
-            <span class="counter-label">Core Courses</span>
+        <!-- Government Recognitions & Accreditations Matrix -->
+        <div class="about__recognitions js-reveal">
+          <div class="about__recognitions-header">
+            <span class="about__sub-label">Credibility &amp; Compliance</span>
+            <h3 class="about__recognitions-title">Government Recognition &amp; Legal Framework</h3>
+            <p class="about__recognitions-desc">
+              Gyanjog Group maintains rigorous statutory compliance, national accreditations, and transparent affiliations across central and state authorities:
+            </p>
           </div>
-          <div class="counter-item js-reveal">
-            <span class="counter-num" data-target="22">0</span>
-            <span class="counter-label">Active Branches</span>
-          </div>
-          <div class="counter-item js-reveal">
-            <span class="counter-num" data-target="9">0</span>
-            <span class="counter-label">Associate Schools</span>
-          </div>
-          <div class="counter-item js-reveal">
-            <span class="counter-num" data-target="19">0</span>
-            <span class="counter-label">Faculty Members</span>
-          </div>
-          <div class="counter-item js-reveal">
-            <span class="counter-num" data-target="3500" data-suffix="+">0</span>
-            <span class="counter-label">Students Trained</span>
+
+          <div class="recognitions-grid">
+            <!-- 1. NITI Aayog -->
+            <div class="recognition-card">
+              <div class="recognition-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <div class="recognition-card__body">
+                <h4 class="recognition-card__name">NITI Aayog</h4>
+                <p class="recognition-card__sub">Government of India</p>
+                <span class="recognition-card__badge">Listed Educational Entity</span>
+              </div>
+            </div>
+
+            <!-- 2. Ministry of Corporate Affairs -->
+            <div class="recognition-card">
+              <div class="recognition-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+              <div class="recognition-card__body">
+                <h4 class="recognition-card__name">Ministry of Corporate Affairs (MCA)</h4>
+                <p class="recognition-card__sub">Government of India</p>
+                <span class="recognition-card__badge">Legally Registered Body</span>
+              </div>
+            </div>
+
+            <!-- 3. State Government Registrations -->
+            <div class="recognition-card">
+              <div class="recognition-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="recognition-card__body">
+                <h4 class="recognition-card__name">Govt. of West Bengal &amp; NCT Delhi</h4>
+                <p class="recognition-card__sub">State Jurisdictions</p>
+                <span class="recognition-card__badge">Dually Registered</span>
+              </div>
+            </div>
+
+            <!-- 4. NSDC -->
+            <div class="recognition-card">
+              <div class="recognition-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <div class="recognition-card__body">
+                <h4 class="recognition-card__name">NSDC Affiliation</h4>
+                <p class="recognition-card__sub">National Skill Development</p>
+                <span class="recognition-card__badge">Skill Partner Network</span>
+              </div>
+            </div>
+
+            <!-- 5. University & UGC -->
+            <div class="recognition-card">
+              <div class="recognition-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </div>
+              <div class="recognition-card__body">
+                <h4 class="recognition-card__name">Glocal University &amp; UGC</h4>
+                <p class="recognition-card__sub">Higher Education Standards</p>
+                <span class="recognition-card__badge">University Recognized</span>
+              </div>
+            </div>
+
+            <!-- 6. Act of 1882 -->
+            <div class="recognition-card">
+              <div class="recognition-card__icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="recognition-card__body">
+                <h4 class="recognition-card__name">Indian Trusts Act of 1882</h4>
+                <p class="recognition-card__sub">Statutory Legal Charter</p>
+                <span class="recognition-card__badge">Established Trust</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Academic Structure & Legal Status Accordion -->
-        <div class="about__accordion js-reveal" aria-label="Legal recognition and structure">
-          <h3 class="about__accordion-title">Academic Structure &amp; Government Recognition</h3>
+        <!-- Vision & Reach Banner -->
+        <div class="about__vision-banner js-reveal">
+          <div class="about__vision-glow" aria-hidden="true"></div>
+          <div class="about__vision-content">
+            <span class="about__vision-tag">Our Guiding Vision &amp; Philosophy</span>
+            <blockquote class="about__vision-quote">
+              &ldquo;Our mission is to create highly skilled, ethically grounded, and socially responsible professionals in the fields of psychology, counselling, education, and spiritual sciences &mdash; blending scientific rigor with deep human values.&rdquo;
+            </blockquote>
+            <cite class="about__vision-cite">
+              <strong>Chandan Chakraborty</strong> &bull; Founder &amp; Director, Gyanjog Group
+            </cite>
+          </div>
 
-          <details class="accordion-item">
-            <summary class="accordion-item__trigger">Academic Structure &amp; Certification Authority</summary>
-            <div class="accordion-item__body">
-              <p>All Psychology, Counselling, and Mental Health?related courses are certified by <strong>Genius Mind Brain Development Academy</strong>. All Spiritual Science, Mind Training, and Consciousness-based courses are certified by <strong>Gyanjog Institute of Psychology and Spiritual Development</strong>.</p>
+          <div class="about__reach-stats">
+            <div class="reach-item">
+              <span class="reach-num">3,500+</span>
+              <span class="reach-text">Students Trained</span>
             </div>
-          </details>
-
-          <details class="accordion-item">
-            <summary class="accordion-item__trigger">Government Registration &amp; Legal Establishment</summary>
-            <div class="accordion-item__body">
-              <ul>
-                <li>Established under the Act of 1882</li>
-                <li>Registered under the Government of National Capital Territory of Delhi</li>
-                <li>Registered under the Government of West Bengal</li>
-              </ul>
+            <div class="reach-sep" aria-hidden="true"></div>
+            <div class="reach-item">
+              <span class="reach-num">9</span>
+              <span class="reach-text">Associate Schools</span>
             </div>
-          </details>
-
-          <details class="accordion-item">
-            <summary class="accordion-item__trigger">National Affiliations &amp; Accreditations</summary>
-            <div class="accordion-item__body">
-              <ul>
-                <li>Listed with NITI Aayog, Government of India</li>
-                <li>Registered with the Ministry of Corporate Affairs (MCA), Government of India</li>
-                <li>Affiliated with National Skill Development Corporation (NSDC), Government of India</li>
-                <li>Affiliated with Glocal University</li>
-                <li>Recognised by the University Grants Commission (UGC)</li>
-              </ul>
+            <div class="reach-sep" aria-hidden="true"></div>
+            <div class="reach-item">
+              <span class="reach-num">1,500+</span>
+              <span class="reach-text">Online Learners</span>
             </div>
-          </details>
-
-          <details class="accordion-item">
-            <summary class="accordion-item__trigger">Our Impact &amp; Footprint</summary>
-            <div class="accordion-item__body">
-              <ul>
-                <li>9 Schools currently associated with our organisation</li>
-                <li>3,500+ students receiving professional training under Gyanjog Group</li>
-                <li>1,500+ professional learners enrolled in our Online Child Counselling Programs</li>
-                <li>Active presence across West Bengal and Dhaka, Bangladesh</li>
-              </ul>
+            <div class="reach-sep" aria-hidden="true"></div>
+            <div class="reach-item">
+              <span class="reach-num">2 Nations</span>
+              <span class="reach-text">India &amp; Bangladesh</span>
             </div>
-          </details>
+          </div>
         </div>
       </div>
     </section>
@@ -638,21 +886,196 @@
 
           <div class="school-marquee" aria-hidden="true">
             <div class="school-marquee__inner">
-              <span>Vivekananda Institution</span><span class="sep">?</span>
-              <span>Saharah Ramala Pal Vidyapith</span><span class="sep">?</span>
-              <span>Assembly of God Church School</span><span class="sep">?</span>
-              <span>Zilla Public School</span><span class="sep">?</span>
-              <span>Royal International School</span><span class="sep">?</span>
-              <span>St. Merry School</span><span class="sep">?</span>
-              <span>Vikramshila Academy</span><span class="sep">?</span>
-              <span>Vivekananda Institution</span><span class="sep">?</span>
-              <span>Saharah Ramala Pal Vidyapith</span><span class="sep">?</span>
-              <span>Assembly of God Church School</span><span class="sep">?</span>
-              <span>Zilla Public School</span><span class="sep">?</span>
-              <span>Royal International School</span><span class="sep">?</span>
-              <span>St. Merry School</span><span class="sep">?</span>
+              <span>Vivekananda Institution</span><span class="sep">&bull;</span>
+              <span>Saharah Ramala Pal Vidyapith</span><span class="sep">&bull;</span>
+              <span>Assembly of God Church School</span><span class="sep">&bull;</span>
+              <span>Zilla Public School</span><span class="sep">&bull;</span>
+              <span>Royal International School</span><span class="sep">&bull;</span>
+              <span>St. Merry School</span><span class="sep">&bull;</span>
+              <span>Vikramshila Academy</span><span class="sep">&bull;</span>
+              <span>Vivekananda Institution</span><span class="sep">&bull;</span>
+              <span>Saharah Ramala Pal Vidyapith</span><span class="sep">&bull;</span>
+              <span>Assembly of God Church School</span><span class="sep">&bull;</span>
+              <span>Zilla Public School</span><span class="sep">&bull;</span>
+              <span>Royal International School</span><span class="sep">&bull;</span>
+              <span>St. Merry School</span><span class="sep">&bull;</span>
               <span>Vikramshila Academy</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5B. VIDEO SESSIONS & CONSULTATIONS SECTION -->
+    <section class="section video-sessions service-consult-us section-pad" id="video-sessions" aria-labelledby="video-sessions-heading">
+      <div class="container">
+        <div class="section-label js-reveal">Masterclasses &amp; Consultations</div>
+        <h2 class="section-title js-reveal" id="video-sessions-heading">
+          Life-Changing <span class="gradient-text">Video Lectures &amp; Sessions</span>
+        </h2>
+        <p class="section-intro js-reveal">
+          Watch real-world clinical psychology sessions, student workshops, and mind-training demonstrations conducted by Gyanjog faculty and Director Chandan Chakraborty.
+        </p>
+
+        <!-- 6 Responsive Video Grid -->
+        <div class="video-grid">
+          <!-- Video 1 -->
+          <article class="video-card js-reveal">
+            <div class="video-card__frame-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/ED97EIu1GBE?si=E_RYDLha_WPD-21c"
+                title="Child &amp; Family Counselling - Gyanjog Masterclass"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-card__meta">
+              <span class="video-card__tag">
+                <span class="video-card__tag-dot" aria-hidden="true"></span>
+                <span>Child Psychology</span>
+              </span>
+              <h3 class="video-card__title">Child &amp; Family Counselling Guidance</h3>
+              <p class="video-card__desc">Clinical approaches to understanding adolescent behaviors, emotional needs, and constructive parenting dialogue.</p>
+            </div>
+          </article>
+
+          <!-- Video 2 -->
+          <article class="video-card js-reveal">
+            <div class="video-card__frame-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/6Zdv_EI5Z0M?si=-mstnEyjln3VL6Uf"
+                title="Neuro Linguistic Programming &amp; Mind Sciences - Gyanjog"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-card__meta">
+              <span class="video-card__tag">
+                <span class="video-card__tag-dot" aria-hidden="true"></span>
+                <span>NLP &amp; Mind Science</span>
+              </span>
+              <h3 class="video-card__title">Subconscious Reprogramming &amp; NLP</h3>
+              <p class="video-card__desc">Break limiting mental beliefs and unlock inner cognitive potential using structured NLP interventions.</p>
+            </div>
+          </article>
+
+          <!-- Video 3 -->
+          <article class="video-card js-reveal">
+            <div class="video-card__frame-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/fCHquDQaJMA?si=Q5Smn_VTUxOKNSxU"
+                title="Clinical Counselling &amp; Practical Training - Gyanjog"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-card__meta">
+              <span class="video-card__tag">
+                <span class="video-card__tag-dot" aria-hidden="true"></span>
+                <span>Therapeutic Practice</span>
+              </span>
+              <h3 class="video-card__title">Therapeutic Frameworks &amp; Case Studies</h3>
+              <p class="video-card__desc">Hands-on student training covering client diagnosis, empathetic rapport, and ethical therapeutic care.</p>
+            </div>
+          </article>
+
+          <!-- Video 4 -->
+          <article class="video-card js-reveal">
+            <div class="video-card__frame-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/MSQabJ9q00o?si=LJWPiIbcNMYPh0RP"
+                title="Stress Management &amp; Mental Health - Gyanjog Seminar"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-card__meta">
+              <span class="video-card__tag">
+                <span class="video-card__tag-dot" aria-hidden="true"></span>
+                <span>Mental Health</span>
+              </span>
+              <h3 class="video-card__title">Stress, Panic &amp; Emotional Wellness</h3>
+              <p class="video-card__desc">Practical coping mechanisms to overcome chronic anxiety, psychosomatic tension, and daily burnout.</p>
+            </div>
+          </article>
+
+          <!-- Video 5 -->
+          <article class="video-card js-reveal">
+            <div class="video-card__frame-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/e5f67L7Buho?si=8D10QvEIglBtgzX7"
+                title="Student Academic &amp; Behavioral Guidance - Gyanjog"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-card__meta">
+              <span class="video-card__tag">
+                <span class="video-card__tag-dot" aria-hidden="true"></span>
+                <span>Adolescent Care</span>
+              </span>
+              <h3 class="video-card__title">Youth Digital Addiction &amp; Focus</h3>
+              <p class="video-card__desc">Strategies to conquer screen and gaming addiction, restore academic focus, and rebuild self-discipline.</p>
+            </div>
+          </article>
+
+          <!-- Video 6 -->
+          <article class="video-card js-reveal">
+            <div class="video-card__frame-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/iSuno2IkHDk?si=fDGMNOMjBGfXoXwv"
+                title="Spiritual Development &amp; Mind Therapy - Gyanjog Workshop"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-card__meta">
+              <span class="video-card__tag">
+                <span class="video-card__tag-dot" aria-hidden="true"></span>
+                <span>Spiritual Science</span>
+              </span>
+              <h3 class="video-card__title">Spiritual Awakening &amp; Inner Harmony</h3>
+              <p class="video-card__desc">Bridging ancient Indian spiritual traditions with evidence-based mental wellness for peace of mind.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Consultation & Clinical Scope Strip (From Original Consultation Modules) -->
+        <div class="consult-scope-card js-reveal">
+          <div class="consult-scope-card__header">
+            <div class="consult-scope-card__badge">Clinical Consultation &amp; Counselling Areas</div>
+            <h3 class="consult-scope-card__title">Areas of Expertise Addressed at Gyanjog Centres</h3>
+            <p class="consult-scope-card__sub">Our certified counsellors and therapists provide professional, confidential consultations across:</p>
+          </div>
+          <div class="consult-scope-tags">
+            <span class="consult-tag">Depression &amp; Mood Swings</span>
+            <span class="consult-tag">Stress &amp; Migraine</span>
+            <span class="consult-tag">OCD &amp; Intrusive Thoughts</span>
+            <span class="consult-tag">Phobias &amp; Social Anxiety</span>
+            <span class="consult-tag">Panic Attacks</span>
+            <span class="consult-tag">Insomnia &amp; Sleep Disorders</span>
+            <span class="consult-tag">Mobile &amp; Gaming Addiction</span>
+            <span class="consult-tag">Relationship &amp; Marital Counselling</span>
+            <span class="consult-tag">Child &amp; Teen Behavioral Issues</span>
+            <span class="consult-tag">Career Confusion</span>
+          </div>
+          <div class="consult-scope-action">
+            <a href="tel:+916289062507" class="btn btn--pill btn--blue">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Book a Confidential Consultation: +91-6289062507</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1350,10 +1773,7 @@
           <!-- Col 1: Brand & Contact -->
           <div class="footer__col">
             <a href="#hero" class="footer__logo" aria-label="Gyanjog Group Home">
-              <picture>
-                <source srcset="assets/img/logos/logo-footer.webp" type="image/webp">
-                <img src="assets/img/logos/logo-footer.png" alt="Gyanjog Group Logo" width="160" height="46" loading="lazy" decoding="async">
-              </picture>
+              <img src="assets/img/logos/logo-footer.png" alt="Gyanjog Group Logo" width="180" height="52" loading="lazy" decoding="async">
             </a>
             <address class="footer__address">
               <p><strong>Gyanjog Educational Institute</strong></p>
