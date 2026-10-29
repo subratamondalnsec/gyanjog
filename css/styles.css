@@ -2351,6 +2351,10 @@ ul, ol {
   border-bottom: 1px solid rgba(0, 73, 131, 0.09);
 }
 
+.tab-label-compact {
+  display: none;
+}
+
 .tab-btn.tab-btn--pill {
   font-family: var(--font-heading);
   font-size: 0.9375rem;
@@ -2742,22 +2746,52 @@ ul, ol {
 }
 
 @media (max-width: 600px) {
-  .tabs.govt-tabs {
-    border-radius: 14px;
+  .govt-tabs-wrapper {
+    margin-bottom: 1.5rem;
     width: 100%;
-    flex-direction: column;
+  }
+  .tabs.govt-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    width: 100%;
+    border-radius: 9999px;
+    padding: 4px;
+    background: rgba(0, 73, 131, 0.06);
+    border: 1px solid rgba(0, 73, 131, 0.12);
   }
   .tab-btn.tab-btn--pill {
     justify-content: center;
     width: 100%;
+    min-width: 0;
+    padding: 8px 6px;
+    font-size: 0.8125rem;
+    gap: 6px;
+    border-radius: 9999px;
+    white-space: nowrap;
+  }
+  .tab-btn.tab-btn--pill svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+  .tab-label-full {
+    display: none;
+  }
+  .tab-label-compact {
+    display: inline;
+  }
+  .tab-pill-badge {
+    display: none;
   }
   .govt-card__footer {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: 8px;
   }
   .govt-card__cta {
-    align-self: flex-end;
+    align-self: auto;
   }
 }
 
@@ -5638,3 +5672,507 @@ ul, ol {
     animation: none !important;
   }
 }
+
+/* ==========================================================================
+   TARGETED MOBILE RESPONSIVENESS SUITE (STRICTLY SCOPED - ZERO DESKTOP REGRESSION)
+   Optimized for 320px, 360px, 375px, 390px, 414px, 430px Viewports
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   A. Tablet & Mobile Base (< 769px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Prevent sticky bar from obscuring footer content */
+  body {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Safe container horizontal padding */
+  .container {
+    padding-left: clamp(1rem, 4vw, 1.25rem);
+    padding-right: clamp(1rem, 4vw, 1.25rem);
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Faculty filter chips horizontal scroll (compact marquee-style track) */
+  .team__filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 1rem 12px 1rem;
+    margin: 0 -1rem 1.75rem -1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start;
+  }
+  .team__filters::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-chip {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 7px 16px;
+    font-size: 0.8125rem;
+    border-radius: var(--radius-full);
+  }
+
+  /* Chairman metric pillars: Keep 3 stats on 1 single row */
+  .chairman-card__stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.4rem !important;
+    padding: 0.75rem 0.65rem !important;
+    text-align: center !important;
+  }
+  .chairman-stat {
+    align-items: center;
+  }
+  .chairman-stat__val {
+    font-size: clamp(1.1rem, 3.8vw, 1.35rem) !important;
+  }
+  .chairman-stat__lbl {
+    font-size: 0.65rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Chairman action buttons stack cleanly */
+  .chairman-card__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+  }
+  .chairman-card__actions .btn,
+  .chairman-video-link {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* Prevent iOS WebKit auto-zoom on inputs */
+  .form-field input,
+  .form-field select,
+  .form-field textarea,
+  .branch-search {
+    font-size: 16px !important;
+  }
+
+  /* Lightbox touch optimization */
+  .lightbox__img-wrap {
+    max-width: 96vw;
+    max-height: 85vh;
+  }
+  .lightbox__img {
+    max-height: 72vh;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   B. Mobile Screens (< 641px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  /* Section Spacing Rhythm */
+  .section-pad {
+    padding-top: clamp(2.5rem, 6vw, 3.5rem);
+    padding-bottom: clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  /* Section Headings */
+  .section-title,
+  .section__title,
+  .h2.section__title,
+  .about__main-heading {
+    font-size: clamp(1.6rem, 6.2vw, 2rem) !important;
+    line-height: 1.22 !important;
+    word-break: break-word;
+  }
+  .section-intro,
+  .section__desc,
+  .about__lead-text {
+    font-size: 0.875rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding-top: 4.75rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .hero__headline {
+    font-size: clamp(1.85rem, 7vw, 2.35rem) !important;
+    line-height: 1.2 !important;
+  }
+  .hero__sub {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .hero__ctas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 0.75rem;
+  }
+  .hero__ctas .btn,
+  .hero__phone-badge {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* Hero Stats Deck: 2x2 Clean Dashboard Layout */
+  .hero__stats-deck {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+    margin-top: 1.5rem !important;
+  }
+  .hero__stat-card {
+    padding: 0.85rem 0.75rem !important;
+    gap: 0.6rem !important;
+    border-radius: 14px !important;
+  }
+  .hero__stat-icon {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+  }
+  .hero__stat-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .hero__stat-value {
+    font-size: 1.35rem !important;
+  }
+  .hero__stat-label {
+    font-size: 0.8125rem !important;
+  }
+  .hero__stat-sub {
+    display: none !important;
+  }
+
+  /* Impact Stats (5 Milestones): 2-2-1 Balanced Layout */
+  .impact-stats {
+    padding: clamp(2rem, 5vw, 3rem) 0;
+  }
+  .impact-stats__grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+  }
+  .impact-stat-card {
+    padding: 1.15rem 0.75rem !important;
+    gap: 0.6rem !important;
+    border-radius: 14px !important;
+  }
+  .impact-stat-card:nth-child(5) {
+    grid-column: span 2 !important;
+    max-width: 240px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .impact-stat-card__num {
+    font-size: 1.65rem !important;
+  }
+  .impact-stat-card__label {
+    font-size: 0.8125rem !important;
+    margin-top: 0.2rem !important;
+  }
+  .impact-stat-card__sub {
+    font-size: 0.6875rem !important;
+  }
+
+  /* About Section Vision Callout & Institutions */
+  .about__vision-callout {
+    padding: 1.35rem 1.15rem !important;
+    border-radius: 18px !important;
+  }
+  .vision-callout__quote {
+    font-size: 0.9375rem !important;
+    line-height: 1.55 !important;
+  }
+  .inst-card__body {
+    padding: 1.15rem 1rem !important;
+  }
+  .recognitions-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+
+  /* Featured Courses Cards & PGD Banner */
+  .courses-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .course-card__body {
+    padding: 1.15rem 1.1rem 1.25rem !important;
+  }
+  .course-card__title {
+    font-size: 1.0625rem !important;
+  }
+  .course-card__footer {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .course-card__btn {
+    padding: 8px 16px !important;
+  }
+  .courses__pgd-banner {
+    padding: 1.35rem 1.15rem !important;
+    border-radius: 18px !important;
+    margin-top: 2rem !important;
+    text-align: center;
+    align-items: center;
+    gap: 1.15rem !important;
+  }
+  .pgd-banner__right {
+    width: 100%;
+    align-items: center;
+    gap: 0.85rem !important;
+  }
+  .pgd-banner__meta {
+    justify-content: center;
+    width: 100%;
+  }
+  .pgd-banner__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Video Sessions Grid & Consultation Scope Card */
+  .video-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .consult-scope-card {
+    padding: 1.35rem 1.15rem !important;
+    border-radius: 18px !important;
+  }
+  .consult-scope-card .btn,
+  .consult-btn-phone,
+  .consult-btn-enquire {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .consult-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  /* 22 Branches Controls & Support Banner */
+  .branches__controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .branches__search-wrap {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .branches__meta-count {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .branches__grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+  .branches__support-banner {
+    padding: 1.35rem 1.15rem !important;
+    border-radius: 18px !important;
+    margin-top: 2rem !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  .branches__support-banner .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Team Section: Chairman Card & Grid */
+  .chairman-card {
+    border-radius: 20px !important;
+  }
+  .chairman-card__body {
+    padding: 1.25rem 1rem !important;
+  }
+  .chairman-card__name {
+    font-size: 1.55rem !important;
+  }
+  .chairman-card__lead {
+    font-size: 0.875rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 0.85rem !important;
+  }
+  .team__grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Google Trust Banner & Testimonials */
+  .google-trust-banner {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center !important;
+    gap: 1rem !important;
+    padding: 1.25rem 1rem !important;
+    border-radius: 18px !important;
+    margin-bottom: 1.75rem !important;
+  }
+  .google-trust-banner__main {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  .google-trust-divider {
+    display: none !important;
+  }
+  .google-trust-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+  .google-review-card {
+    padding: 1.35rem 1.15rem !important;
+    border-radius: 18px !important;
+  }
+
+  /* Campus Moments Photo Marquee */
+  .photo-card {
+    flex: 0 0 clamp(205px, 62vw, 255px) !important;
+    height: clamp(140px, 42vw, 175px) !important;
+    border-radius: 14px !important;
+  }
+  .photo-card__overlay {
+    padding: 0.85rem 0.95rem !important;
+  }
+  .photo-card__title {
+    font-size: 0.8125rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* Contact & Admission Form */
+  .contact__form-wrap {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+  }
+  .form-card-title {
+    font-size: 1.2rem !important;
+  }
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .form-submit-btn {
+    width: 100% !important;
+    padding: 13px 20px !important;
+    justify-content: center !important;
+  }
+  .office-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 18px !important;
+  }
+  .contact-hours-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding-top: 3.25rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .footer__inner {
+    gap: 2rem !important;
+    margin-bottom: 2.25rem !important;
+  }
+  .footer__wordmark {
+    font-size: clamp(2.5rem, 14vw, 4.5rem) !important;
+    max-width: 100% !important;
+    overflow: hidden;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   C. Ultra-Compact Mobile (< 400px - e.g. iPhone SE, Galaxy Fold 320px/360px/375px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 400px) {
+  /* Container breathing room on tiny screens */
+  .container {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+  }
+
+  /* Hero headline and badge */
+  .hero__headline {
+    font-size: 1.65rem !important;
+  }
+  .hero__badge {
+    padding: 4px 10px !important;
+    font-size: 0.7rem !important;
+  }
+  .hero__stat-card {
+    padding: 0.75rem 0.6rem !important;
+    gap: 0.45rem !important;
+  }
+  .hero__stat-value {
+    font-size: 1.2rem !important;
+  }
+  .hero__stat-label {
+    font-size: 0.75rem !important;
+  }
+
+  /* Impact stats card numbers */
+  .impact-stat-card__num {
+    font-size: 1.45rem !important;
+  }
+  .impact-stat-card__label {
+    font-size: 0.75rem !important;
+  }
+
+  /* Govt Tabs pill compact */
+  .tab-btn.tab-btn--pill {
+    padding: 7px 4px !important;
+    font-size: 0.75rem !important;
+    gap: 4px !important;
+  }
+  .tab-btn.tab-btn--pill svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Chairman stats */
+  .chairman-stat__val {
+    font-size: 1.05rem !important;
+  }
+  .chairman-stat__lbl {
+    font-size: 0.6rem !important;
+  }
+
+  /* Offices chips */
+  .officer-chips {
+    grid-template-columns: 1fr !important;
+  }
+  .office-card__actions-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hours-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Mobile sticky action bar text */
+  .mobile-sticky-bar__btn {
+    font-size: 0.8125rem !important;
+    gap: 6px !important;
+  }
+}
+
