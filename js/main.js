@@ -469,39 +469,120 @@
     });
   }
 
-  // 9. Courses Horizontal Scroll (Pinned on Desktop)
+  // 9. Courses Horizontal Slider & Navigation Controls
   function initCoursesScroll() {
     const scrollWrap = document.getElementById('courses-scroll-wrap');
     const track = document.getElementById('courses-track');
+    const prevBtn = document.getElementById('courses-prev');
+    const nextBtn = document.getElementById('courses-next');
+    const currentIndicator = document.getElementById('courses-current');
     const progressFill = document.getElementById('courses-progress-fill');
 
     if (!scrollWrap || !track) return;
 
-    const mm = gsap.matchMedia();
+    const cards = track.querySelectorAll('.course-card');
+    if (!cards.length) return;
 
-    mm.add('(min-width: 1024px)', () => {
-      const getScrollAmount = () => -(track.scrollWidth - window.innerWidth + 80);
+    function getCardStep() {
+      const firstCard = cards[0];
+      const style = window.getComputedStyle(track);
+      const gap = parseFloat(style.gap) || 24;
+      return firstCard.offsetWidth + gap;
+    }
 
-      const tween = gsap.to(track, {
-        x: getScrollAmount,
-        ease: 'none',
+    function updateState() {
+      const scrollLeft = scrollWrap.scrollLeft;
+      const maxScroll = scrollWrap.scrollWidth - scrollWrap.clientWidth;
+      const step = getCardStep();
+      
+      // Calculate current card index (1-based)
+      const currentIndex = Math.min(cards.length, Math.max(1, Math.round(scrollLeft / step) + 1));
+      
+      if (currentIndicator) {
+        currentIndicator.textContent = currentIndex < 10 ? `0${currentIndex}` : `${currentIndex}`;
+      }
+
+      if (progressFill && maxScroll > 0) {
+        const progress = Math.min(100, Math.max(15, (scrollLeft / maxScroll) * 100));
+        progressFill.style.width = `${progress}%`;
+      }
+
+      if (prevBtn) {
+        const isStart = scrollLeft <= 10;
+        prevBtn.disabled = isStart;
+        prevBtn.setAttribute('aria-disabled', isStart ? 'true' : 'false');
+      }
+
+      if (nextBtn) {
+        const isEnd = scrollLeft >= maxScroll - 10;
+        nextBtn.disabled = isEnd;
+        nextBtn.setAttribute('aria-disabled', isEnd ? 'true' : 'false');
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const step = getCardStep();
+        scrollWrap.scrollBy({ left: -step, behavior: 'smooth' });
       });
+    }
 
-      ScrollTrigger.create({
-        trigger: scrollWrap,
-        start: 'top 15%',
-        end: () => `+=${track.scrollWidth - window.innerWidth}`,
-        pin: true,
-        animation: tween,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          if (progressFill) {
-            progressFill.style.width = Math.round(self.progress * 100) + '%';
-          }
-        },
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const step = getCardStep();
+        scrollWrap.scrollBy({ left: step, behavior: 'smooth' });
       });
+    }
+
+    // Passive scroll listener for real-time progress update
+    let isTicking = false;
+    scrollWrap.addEventListener('scroll', () => {
+      if (!isTicking) {
+        window.requestAnimationFrame(() => {
+          updateState();
+          isTicking = false;
+        });
+        isTicking = true;
+      }
+    }, { passive: true });
+
+    // Smooth Mouse Drag to Scroll
+    let isDown = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    scrollWrap.addEventListener('mousedown', (e) => {
+      if (e.target.closest('a, button')) return;
+      isDown = true;
+      startX = e.pageX - scrollWrap.offsetLeft;
+      scrollStart = scrollWrap.scrollLeft;
     });
+
+    window.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+
+    scrollWrap.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollWrap.offsetLeft;
+      const walk = (x - startX) * 1.4;
+      scrollWrap.scrollLeft = scrollStart - walk;
+    });
+
+    // Keyboard Arrow navigation when focused
+    scrollWrap.addEventListener('keydown', (e) => {
+      const step = getCardStep();
+      if (e.key === 'ArrowRight') {
+        scrollWrap.scrollBy({ left: step, behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft') {
+        scrollWrap.scrollBy({ left: -step, behavior: 'smooth' });
+      }
+    });
+
+    // Initial state calculation
+    updateState();
+    window.addEventListener('resize', updateState);
   }
   // 10. Tabs for Govt. Courses & Associate Schools
   function initTabs() {
@@ -613,17 +694,40 @@
 
     let activeIndex = 0;
 
+    function getVisibleCount() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 700) return 2;
+      return 1;
+    }
+
+    function getMaxIndex() {
+      const visible = getVisibleCount();
+      return Math.max(0, slides.length - visible);
+    }
+
     function updateCarousel(index) {
-      activeIndex = (index + slides.length) % slides.length;
-      const offset = activeIndex * -100;
+      const maxIndex = getMaxIndex();
+      if (index < 0) {
+        activeIndex = maxIndex;
+      } else if (index > maxIndex) {
+        activeIndex = 0;
+      } else {
+        activeIndex = index;
+      }
+
+      const slide = slides[0];
+      const gap = parseFloat(window.getComputedStyle(track).gap) || 24;
+      const step = slide.offsetWidth + gap;
+      const xOffset = -(activeIndex * step);
+
       gsap.to(track, {
-        xPercent: offset,
-        duration: 0.6,
+        x: xOffset,
+        duration: 0.55,
         ease: 'power3.out',
       });
 
       dots.forEach((dot, idx) => {
-        const isCurrent = idx === activeIndex;
+        const isCurrent = idx === activeIndex || (idx === dots.length - 1 && activeIndex >= maxIndex);
         dot.classList.toggle('testimonials__dot--active', isCurrent);
         dot.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
       });
@@ -638,12 +742,30 @@
 
     dots.forEach((dot) => {
       dot.addEventListener('click', () => {
-        const idx = parseInt(dot.getAttribute('data-index'), 10);
+        const idx = parseInt(dot.getAttribute('data-index'), 10) || 0;
         updateCarousel(idx);
       });
     });
 
-    // Keyboard support
+    window.addEventListener('resize', () => {
+      updateCarousel(activeIndex);
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) updateCarousel(activeIndex + 1);
+        else updateCarousel(activeIndex - 1);
+      }
+    }, { passive: true });
+
+    // Keyboard navigation
     track.parentElement.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') updateCarousel(activeIndex - 1);
       if (e.key === 'ArrowRight') updateCarousel(activeIndex + 1);
